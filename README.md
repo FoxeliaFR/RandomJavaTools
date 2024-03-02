@@ -7,7 +7,7 @@ This is a collection of random Java tools made by the Foxelia team. You can use 
 This package contains tools to help you develop your Java applications.
 
 * [Files](src/fr/foxelia/tools/java/files) ➡ You can find here some tools to help you manage files.
-    * [FilesDeleter](src/fr/foxelia/tools/java/files/FilesDeleter.java) ➡ A tool to delete files and directories recursively.
+    * [FilesDeleter](src/fr/foxelia/tools/java/files/deleter) ➡ A tool to delete files and directories recursively.
 
 ## [Minecraft](src/fr/foxelia/tools/minecraft)
 
