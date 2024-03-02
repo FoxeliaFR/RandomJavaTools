@@ -1,14 +1,14 @@
-# JSON Embed Builder for JDA
+# JSON File Reader
 
 [![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Discord](https://img.shields.io/discord/341897164642975756?color=blue&label=Discord)](https://discord.foxelia.fr/)
 [![GitHub](https://img.shields.io/github/stars/FoxeliaFR/RandomJavaTools?style=social)](https://github.com/FoxeliaFR/RandomJavaTools)
 
-Embeds are a great way to make your bot look professional. They can be used to display information in a nice and organized way. This class allows you to create embeds easily and quickly. You can use it to create embeds for your bot using JDA.
+JSON File Reader is a class that allows you to read a [File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html) or an [InputStream](https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html) and convert it to a [JsonObject](https://javadoc.io/doc/com.google.code.gson/gson/latest/com.google.gson/com/google/gson/JsonObject.html).
 
 ## Why I created this class ?
 
-Because I'm a big fan of configuration files. I like to have a configuration file for everything. So I wanted to create a class that allows me to create embeds using a json file. This way, I can easily create embeds and modify them without having to modify the code.
+I created this class because I needed to read a JSON file to load an embed for my Discord bot. You can see the result of this work in the [JsonEmbedBuilder](src/fr/foxelia/tools/java/discord/JsonEmbedBuilder.java) class.
 
 ## License
 [<img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg">](https://creativecommons.org/licenses/by-sa/4.0/)<br>
@@ -26,7 +26,6 @@ Before using this class, you must add the following libraries to your project :
 
 | Library Name                                                         |
 |----------------------------------------------------------------------|
-| [JavaDiscordAPI](https://github.com/discord-jda/JDA)                 |
 | [Gson](https://mvnrepository.com/artifact/com.google.code.gson/gson) | 
 
 ## How to use it ?
@@ -34,34 +33,22 @@ You can use this class in your projects in two different ways :
 - Add the dependency to your project using Maven, Gradle, or any other dependency manager.
 - You can also import the class directly into your project.
 
-First, you need to create a new JSONEmbedBuilder object. Then you can use the following methods to create your embed :
+Simply pass the file or input stream :
 
 ```java
-String jsonEmbed = "{\"title\": \"My Title\", \"description\": \"My Description\", \"color\": \"#ff0000\"}";
-
-JsonEmbedBuilder builder = new JsonEmbedBuilder(jsonEmbed);
+String json = JsonFileReader.getJsonAsString(new File("file.json"));
 ```
 
-To build the embed, simply use the build() method :
+You can also use the `getJsonObject` method to get a `JsonObject` :
 
 ```java
-MessageEmbed embed = builder.build();
+JsonObject jsonObject = JsonFileReader.getJsonAsObject(new File("file.json"));
 ```
 
-You can also build it in one line :
-
-```java
-MessageEmbed embed = new JsonEmbedBuilder("{\"title\": \"My Title\", \"description\": \"My Description\", \"color\": \"#ff0000\"}").build();
-```
-
-To build the embed with the good fields, you can use the following tools created by [cubedhuang](https://github.com/cubedhuang) :
-- https://embed.dan.onl/
-
-If you need to read the embed from a file, refer to [JsonFileReader](src/fr/foxelia/tools/java/files/reader/).
 
 ## Support
 If you have any questions, you can contact us on our discord server : [https://discord.foxelia.fr/](https://discord.foxelia.fr/)
 
 ## Credit
 
-The JsonEmbedBuilder class was created by [Zarinoow](https://github.com/Zarinoow/) of the [Foxelia](https://foxelia.fr/) team.
+The JsonFileReader class was created by [Zarinoow](https://github.com/Zarinoow/) of the [Foxelia](https://foxelia.fr/) team.
