@@ -8,6 +8,7 @@ This package contains tools to help you develop your Java applications.
 
 * [Files](src/fr/foxelia/tools/java/files) ➡ You can find here some tools to help you manage files.
     * [FilesDeleter](src/fr/foxelia/tools/java/files/deleter) ➡ A tool to delete files and directories recursively.
+    * [JsonFileReader](src/fr/foxelia/tools/java/files/json/reader) ➡ A tool to read JSON files.
 
 ## [Minecraft](src/fr/foxelia/tools/minecraft)
 
@@ -22,3 +23,5 @@ This package contains tools to help you develop your Minecraft plugins, mods, or
 This package contains tools to help you develop your Discord bots or anything else related to Discord.
 
 * [Java Discord API (JDA)](src/fr/foxelia/tools/discord/jda) ➡ You can find here some tools to help you develop your Discord bots using JDA.
+    * [Embed](src/fr/foxelia/tools/discord/jda/embed) ➡ Tools related to Discord embeds.
+        * [JsonEmbedBuilder](src/fr/foxelia/tools/discord/jda/embed/json) ➡ A tool to build embeds using JSON.
