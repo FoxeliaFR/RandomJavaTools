@@ -1,5 +1,9 @@
 # Toast Notification System
 
+[![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Discord](https://img.shields.io/discord/341897164642975756?color=blue&label=Discord)](https://discord.foxelia.fr/)
+[![GitHub](https://img.shields.io/github/stars/FoxeliaFR/RandomJavaTools?style=social)](https://github.com/FoxeliaFR/RandomJavaTools)
+
 A toast notification is a small popup that appears in the top right corner of the screen. It is used to display a message to the user without interrupting their current activity. In minecraft, you receive a toast when you receive an advancement, unlock a recipe or complete a challenge.
 
 

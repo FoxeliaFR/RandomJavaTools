@@ -1,5 +1,9 @@
 # Files Deleter System
 
+[![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Discord](https://img.shields.io/discord/341897164642975756?color=blue&label=Discord)](https://discord.foxelia.fr/)
+[![GitHub](https://img.shields.io/github/stars/FoxeliaFR/RandomJavaTools?style=social)](https://github.com/FoxeliaFR/RandomJavaTools)
+
 The files deleter system is a simple tool that allows you to delete files and directories recursively. It is useful when you want to delete a directory and all its content.
 
 ## Why I created this class ?

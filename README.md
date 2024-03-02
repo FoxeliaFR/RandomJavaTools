@@ -1,5 +1,9 @@
 # FoxeliaAPI (RandomJavaTools)
 
+[![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Discord](https://img.shields.io/discord/341897164642975756?color=blue&label=Discord)](https://discord.foxelia.fr/)
+[![GitHub](https://img.shields.io/github/stars/FoxeliaFR/RandomJavaTools?style=social)](https://github.com/FoxeliaFR/RandomJavaTools)
+
 This is a collection of random Java tools made by the Foxelia team. You can use them in your projects following the according license.
 
 ## [Java](src/fr/foxelia/tools/java)
