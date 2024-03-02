@@ -1,4 +1,4 @@
-package fr.foxelia.tools.minecraft.nms.toast;
+package fr.foxelia.tools.minecraft.bukkit.nms.toast;
 
 import com.google.gson.JsonObject;
 import net.md_5.bungee.chat.ComponentSerializer;
