@@ -57,7 +57,7 @@ MessageEmbed embed = new JsonEmbedBuilder("{\"title\": \"My Title\", \"descripti
 To build the embed with the good fields, you can use the following tools created by [cubedhuang](https://github.com/cubedhuang) :
 - https://embed.dan.onl/
 
-If you need to read the embed from a file, refer to [JsonFileReader](src/fr/foxelia/tools/java/files/reader/).
+If you need to read the embed from a file, refer to [JsonFileReader](../../../../java/files/json/reader/).
 
 ## Support
 If you have any questions, you can contact us on our discord server : [https://discord.foxelia.fr/](https://discord.foxelia.fr/)

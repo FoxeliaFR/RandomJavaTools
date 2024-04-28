@@ -8,7 +8,7 @@ JSON File Reader is a class that allows you to read a [File](https://docs.oracle
 
 ## Why I created this class ?
 
-I created this class because I needed to read a JSON file to load an embed for my Discord bot. You can see the result of this work in the [JsonEmbedBuilder](src/fr/foxelia/tools/java/discord/JsonEmbedBuilder.java) class.
+I created this class because I needed to read a JSON file to load an embed for my Discord bot. You can see the result of this work in the [JsonEmbedBuilder](../../../../discord/jda/embed/json/JsonEmbedBuilder.java) class.
 
 ## License
 [<img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg">](https://creativecommons.org/licenses/by-sa/4.0/)<br>
