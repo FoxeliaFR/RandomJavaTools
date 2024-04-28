@@ -21,6 +21,9 @@ This package contains tools to help you develop your Minecraft plugins, mods, or
 * [Bukkit](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit) ➡ You can find here some tools to help you develop your Minecraft plugins.
     * [NMS](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms) ➡ Our tools which use NMS to interact with Minecraft.
         * [Toaster](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms/toast) ➡ A tool to send toast notifications to players.
+    * [UI](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui) ➡ You can find here some tools to help you develop your Minecraft plugins UI.
+        * [Console](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console) ➡ Tools related to the console UI.
+            * [ColoredConsole](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console/color) ➡ A tool to bring back colors to your console logs messages inspired by the Bukkit API.
 
 ## [Discord](foxapi-core/src/fr/foxelia/tools/discord)
 
