@@ -1,0 +1,6 @@
+name: FoxAPI
+version: ${project.version}
+main: fr.foxelia.foxapi.FoxAPI
+authors: [Foxelia, Zarinoow, ParadoxalUnivers]
+description: FoxAPI is a library plugin used by the Foxelia team to create their plugins more easily.
+api-version: 1.13
