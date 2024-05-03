@@ -10,26 +10,29 @@ This is a collection of random Java tools made by the Foxelia team. You can use 
 
 This package contains tools to help you develop your Java applications.
 
-* 📂 [Files](foxapi-core/src/fr/foxelia/tools/java/files) ➡ You can find here some tools to help you manage files.
-    * 🍵 [FilesDeleter](foxapi-core/src/fr/foxelia/tools/java/files/deleter) ➡ A tool to delete files and directories recursively.
-    * 🍵 [JsonFileReader](foxapi-core/src/fr/foxelia/tools/java/files/json/reader) ➡ A tool to read JSON files.
-* 🍵 [Pair](foxapi-core/src/fr/foxelia/tools/java/pair) ➡ A tool to store a two objects in one.
+* 📂 [Files](foxapi-core/src/fr/foxelia/tools/java/files) → You can find here some tools to help you manage files.
+    * 🍵 [FilesDeleter](foxapi-core/src/fr/foxelia/tools/java/files/deleter) → A tool to delete files and directories recursively.
+    * 🍵 [JsonFileReader](foxapi-core/src/fr/foxelia/tools/java/files/json/reader) → A tool to read JSON files.
+* 📂 [AbstractWindowToolkit (AWT)](foxapi-core/src/fr/foxelia/tools/java/awt) → Tools for the Abstract Window Toolkit (AWT).
+    * 📂 [Color](foxapi-core/src/fr/foxelia/tools/java/awt/color) → Tools related to colors.
+        * 🍵 [ProgressiveColor](foxapi-core/src/fr/foxelia/tools/java/awt/color/gradients) → A tool to create a progressive color gradient between 3 colors.
+* 🍵 [Pair](foxapi-core/src/fr/foxelia/tools/java/pair) → A tool to store a two objects in one.
 
 ## [Minecraft](foxapi-core/src/fr/foxelia/tools/minecraft)
 
 This package contains tools to help you develop your Minecraft plugins, mods, or anything else related to Minecraft.
 
-* 📂 [Bukkit](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit) ➡ You can find here some tools to help you develop your Minecraft plugins.
-    * 📂 [NMS](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms) ➡ Our tools which use NMS to interact with Minecraft.
-        * 🍵 [Toaster](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms/toast) ➡ A tool to send toast notifications to players.
-    * 📂 [UI](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui) ➡ You can find here some tools to help you develop your Minecraft plugins UI.
-        * 📂 [Console](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console) ➡ Tools related to the console UI.
-            * 🍵 [ColoredConsole](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console/color) ➡ A tool to bring back colors to your console logs messages inspired by the Bukkit API.
+* 📂 [Bukkit](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit) → You can find here some tools to help you develop your Minecraft plugins.
+    * 📂 [NMS](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms) → Our tools which use NMS to interact with Minecraft.
+        * 🍵 [Toaster](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms/toast) → A tool to send toast notifications to players.
+    * 📂 [UI](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui) → You can find here some tools to help you develop your Minecraft plugins UI.
+        * 📂 [Console](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console) → Tools related to the console UI.
+            * 🍵 [ColoredConsole](foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/ui/console/color) → A tool to bring back colors to your console logs messages inspired by the Bukkit API.
 
 ## [Discord](foxapi-core/src/fr/foxelia/tools/discord)
 
 This package contains tools to help you develop your Discord bots or anything else related to Discord.
 
-* 📂 [Java Discord API (JDA)](foxapi-core/src/fr/foxelia/tools/discord/jda) ➡ You can find here some tools to help you develop your Discord bots using JDA.
-    * 📂 [Embed](foxapi-core/src/fr/foxelia/tools/discord/jda/embed) ➡ Tools related to Discord embeds.
-        * 🍵 [JsonEmbedBuilder](foxapi-core/src/fr/foxelia/tools/discord/jda/embed/json) ➡ A tool to build embeds using JSON.
+* 📂 [Java Discord API (JDA)](foxapi-core/src/fr/foxelia/tools/discord/jda) → You can find here some tools to help you develop your Discord bots using JDA.
+    * 📂 [Embed](foxapi-core/src/fr/foxelia/tools/discord/jda/embed) → Tools related to Discord embeds.
+        * 🍵 [JsonEmbedBuilder](foxapi-core/src/fr/foxelia/tools/discord/jda/embed/json) → A tool to build embeds using JSON.
