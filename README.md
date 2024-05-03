@@ -13,6 +13,7 @@ This package contains tools to help you develop your Java applications.
 * [Files](foxapi-core/src/fr/foxelia/tools/java/files) ➡ You can find here some tools to help you manage files.
     * [FilesDeleter](foxapi-core/src/fr/foxelia/tools/java/files/deleter) ➡ A tool to delete files and directories recursively.
     * [JsonFileReader](foxapi-core/src/fr/foxelia/tools/java/files/json/reader) ➡ A tool to read JSON files.
+* [Pair](foxapi-core/src/fr/foxelia/tools/java/pair) ➡ A tool to store a two objects in one.
 
 ## [Minecraft](foxapi-core/src/fr/foxelia/tools/minecraft)
 
