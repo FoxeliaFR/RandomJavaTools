@@ -6,6 +6,9 @@
 
 A toast notification is a small popup that appears in the top right corner of the screen. It is used to display a message to the user without interrupting their current activity. In minecraft, you receive a toast when you receive an advancement, unlock a recipe or complete a challenge.
 
+## Searching old one class system ?
+
+Before the API worked with only one class. Now, the API works with a class and an interface. This change allows us to support multiple versions of Minecraft. You can find the old class [here](https://github.com/FoxeliaFR/RandomJavaTools/tree/5d101c3ad3febfd83303ca2054c694c7c999137c/foxapi-core/src/fr/foxelia/tools/minecraft/bukkit/nms/toast)
 
 ## Why I created this class ?
 
@@ -31,17 +34,19 @@ Before using this class, you must add the following libraries to your project :
 | [Gson](https://mvnrepository.com/artifact/com.google.code.gson/gson)                            | 
 
 ## How to use it ?
-Firstly, add the class to your project and adapt the package name to your project. Now, adapt the imports to match the wanted minecraft version.<br><br>
+Import the library as a dependency in your project and enjoy it. You can also copy each useful class in your project.
+
+
 You can use the following code to create a toast object :
 
 ```java
-Toaster toast = new Toaster(icon, text, frame);
+ToastNotification toast = new ToastNotification(icon, text, frame);
 ```
 
 `icon` is an [ItemStack](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemStack.html) object.<br>
 `text` is a [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) object. It can be colored with [ChatColor](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/ChatColor.html) objects. I recommend you to not use more than 64 characters including spaces.<br>
-`frame` is a AdvancementFrameType object. You can use the following values : `Toaster.TASK`, `Toaster.CHALLENGE` and `Toaster.GOAL`.<br><br>
-AdvancementFrameType has the following attributes :<br>
+`frame` is a [ToastType](ToastType.java) object. You can use the following values : `ToastType.TASK`, `ToastType.CHALLENGE` and `ToastType.GOAL`.<br><br>
+ToastType has the following attributes :<br>
 
 | Type      | Title color | Title text           | Play sound |
 |-----------|-------------|----------------------|------------|
@@ -49,10 +54,10 @@ AdvancementFrameType has the following attributes :<br>
 | CHALLENGE | PINK        | Challenge complete!  | true       |
 | GOAL      | YELLOW      | Goal reached!        | false      |
 
-<br>When you have created your toast object, you can send it to a player with the following code :
+<br>When you have created your toast object, you can send it to one or more player with the following code :
 
 ```java
-toast.sendTo(player);
+toast.sendToast(player);
 ```
 
 ## Support
@@ -60,4 +65,4 @@ If you have any questions, you can contact us on our discord server : [https://d
 
 ## Credit
 
-The Toaster class was created by [Zarinoow](https://github.com/Zarinoow/) of the [Foxelia](https://foxelia.fr/) team. A huge thanks to [ZockerAxel](https://github.com/ZockerAxel/) who allowed me to reverse engineer his plugin [CrazyAdvancementsAPI](https://github.com/ZockerAxel/CrazyAdvancementsAPI) to create this class and accepted to share it with the community. 
+The Toaster classes was created by [Zarinoow](https://github.com/Zarinoow/) of the [Foxelia](https://foxelia.fr/) team. A huge thanks to [ZockerAxel](https://github.com/ZockerAxel/) who allowed me to reverse engineer his plugin [CrazyAdvancementsAPI](https://github.com/ZockerAxel/CrazyAdvancementsAPI) to create this class and accepted to share it with the community. 

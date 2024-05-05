@@ -7,7 +7,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>foxapi-bukkit</artifactId>
+    <artifactId>foxapi-nms</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -19,24 +19,17 @@
     <dependencies>
         <dependency>
             <groupId>fr.foxelia.foxapi</groupId>
-            <artifactId>foxapi-nms</artifactId>
+            <artifactId>foxapi-nms-api</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>fr.foxelia.foxapi</groupId>
-            <artifactId>foxapi-standalone</artifactId>
+            <artifactId>foxapi-nms-1_19_R2</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
 
     <build>
-        <sourceDirectory>${project.basedir}/src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -51,8 +44,7 @@
                         <configuration>
                             <artifactSet>
                                 <includes>
-                                    <include>fr.foxelia.foxapi:foxapi-nms</include>
-                                    <include>fr.foxelia.foxapi:foxapi-standalone</include>
+                                    <include>fr.foxelia.foxapi:*</include>
                                 </includes>
                             </artifactSet>
                         </configuration>

@@ -1,9 +1,6 @@
 package fr.foxelia.foxapi;
 
 import fr.foxelia.tools.minecraft.bukkit.ui.console.color.ColoredConsole;
-import net.md_5.bungee.api.ChatColor;
-import org.bukkit.Bukkit;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -23,7 +20,6 @@ public class FoxAPI extends JavaPlugin {
         getLogger().log(Level.INFO, "");
         getLogger().log(Level.INFO, ColoredConsole.YELLOW + "By " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_GREEN + "======");
-
     }
 
     @Override
