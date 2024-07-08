@@ -3,7 +3,7 @@
 
     <parent>
         <groupId>fr.foxelia.foxapi</groupId>
-        <artifactId>RandomJavaTools</artifactId>
+        <artifactId>foxapi-nms-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
