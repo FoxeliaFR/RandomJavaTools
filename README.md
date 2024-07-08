@@ -16,6 +16,10 @@ This package contains tools to help you develop your Java applications.
 * 📂 [AbstractWindowToolkit (AWT)](foxapi-core/src/fr/foxelia/tools/java/awt) → Tools for the Abstract Window Toolkit (AWT).
     * 📂 [Color](foxapi-core/src/fr/foxelia/tools/java/awt/color) → Tools related to colors.
         * 🍵 [ProgressiveColor](foxapi-core/src/fr/foxelia/tools/java/awt/color/gradients) → A tool to create a progressive color gradient between 3 colors.
+* 📂 [NumericTools](foxapi-core/src/fr/foxelia/tools/java/number) → You can find here some tools to help you manage numbers.
+    * 🍵 [NumericChecker](foxapi-core/src/fr/foxelia/tools/java/number/check/NumericChecker.java) → A tool to check if a string is a number.
+    * 🍵 [NummberToString](foxapi-core/src/fr/foxelia/tools/java/number/display/NumberToString.java) → Convert a number to a short string (K, M, B).
+    * 🍵 [RoundNumber](foxapi-core/src/fr/foxelia/tools/java/number/round/RoundNumber.java) → A tool to round a number to a specific number of decimal places.
 * 🍵 [Pair](foxapi-core/src/fr/foxelia/tools/java/pair) → A tool to store a two objects in one.
 
 ## [Minecraft](foxapi-core/src/fr/foxelia/tools/minecraft)
@@ -28,6 +32,7 @@ This package contains tools to help you develop your Minecraft plugins, mods, or
     * 📂 [UI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui) → You can find here some tools to help you develop your Minecraft plugins UI.
         * 📂 [Console](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/console) → Tools related to the console UI.
             * 🍵 [ColoredConsole](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/console/color) → A tool to bring back colors to your console logs messages inspired by the Bukkit API.
+    * 🍵 [Cooldown](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/cooldown) → Check if a player is has does a specific action in a specific time.
 
 ## [Discord](foxapi-core/src/fr/foxelia/tools/discord)
 
