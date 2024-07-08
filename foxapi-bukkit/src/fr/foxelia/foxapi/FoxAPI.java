@@ -1,8 +1,12 @@
 package fr.foxelia.foxapi;
 
+import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
+import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
+import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;
 import fr.foxelia.tools.minecraft.bukkit.ui.console.color.ColoredConsole;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.*;
 import java.util.logging.Level;
 
 public class FoxAPI extends JavaPlugin {
@@ -39,5 +43,27 @@ public class FoxAPI extends JavaPlugin {
 
     public static FoxAPI getInstance() {
         return instance;
+    }
+
+    private Set<CooldownType> hooks = new HashSet<>();
+
+    public void hookCooldown(CooldownType... cooldown) {
+        for(CooldownType type : cooldown) {
+            if(hooks.contains(type)) continue;
+            if(type.equals(CooldownType.GLOBAL)) {
+                CooldownType[] values = Arrays.stream(CooldownType.values())
+                        .filter(t -> !t.equals(CooldownType.GLOBAL))
+                        .toArray(CooldownType[]::new);
+                for(CooldownType value : values) {
+                    hookCooldown(value);
+                }
+                break;
+            }
+            hooks.add(type);
+            switch (type) {
+                case MOVE -> getServer().getPluginManager().registerEvents(new CooldownMoveListener(), this);
+                case TAKE_DAMAGE -> getServer().getPluginManager().registerEvents(new CooldownTakeDamageListener(), this);
+            }
+        }
     }
 }
