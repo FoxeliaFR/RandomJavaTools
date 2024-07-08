@@ -2,10 +2,9 @@ package fr.foxelia.tools.minecraft.nms.toast;
 
 
 import com.google.gson.JsonObject;
-import java.util.*;
-
 import fr.foxelia.tools.minecraft.bukkit.nms.toast.ToastType;
 import fr.foxelia.tools.minecraft.bukkit.nms.toast.Toaster;
+import java.util.*;
 import net.md_5.bungee.chat.ComponentSerializer;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.LootSerializationContext;
