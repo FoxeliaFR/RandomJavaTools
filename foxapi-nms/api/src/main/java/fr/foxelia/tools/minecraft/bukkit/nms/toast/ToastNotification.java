@@ -2,7 +2,6 @@ package fr.foxelia.tools.minecraft.bukkit.nms.toast;
 
 
 import fr.foxelia.tools.minecraft.bukkit.nms.NMSVersionChecker;
-
 import java.util.ArrayList;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
