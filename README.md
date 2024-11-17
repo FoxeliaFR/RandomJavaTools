@@ -35,6 +35,9 @@ This package contains tools to help you develop your Minecraft plugins, mods, or
         * 📂 [GUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui) → Collection of classes to create inventory based GUI
           * 🍵 [GUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui/GUI.java) → Create a GUI with basic features.
           * 🍵 [NavigableGUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui/NavigableGUI.java) → Create a navigable GUI with pages.
+    * 📂 [Datas](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/datas) → You can find here some tools to help you manage datas.
+        * 🍵 [PlayerFiles](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/datas/player/PlayerFiles.java) → Create a configuration files for each player.
+        * 🍵 [UUIDFetcher](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/datas/uuid/UUIDFetcher.java) → Convert a player name to a UUID.
     * 🍵 [Cooldown](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/cooldown) → Check if a player is has does a specific action in a specific time.
 
 ## [Discord](foxapi-core/src/fr/foxelia/tools/discord)
