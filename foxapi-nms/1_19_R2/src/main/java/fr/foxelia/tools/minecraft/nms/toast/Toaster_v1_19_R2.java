@@ -7,10 +7,10 @@ import fr.foxelia.tools.minecraft.bukkit.nms.toast.Toaster;
 import java.util.*;
 import net.md_5.bungee.chat.ComponentSerializer;
 import net.minecraft.advancements.*;
-import net.minecraft.advancements.critereon.LootSerializationContext;
-import net.minecraft.network.chat.IChatBaseComponent;
-import net.minecraft.network.protocol.game.PacketPlayOutAdvancements;
-import net.minecraft.resources.MinecraftKey;
+import net.minecraft.advancements.critereon.SerializationContext;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundUpdateAdvancementsPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.bukkit.craftbukkit.v1_19_R2.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_19_R2.inventory.CraftItemStack;
@@ -23,28 +23,28 @@ public class Toaster_v1_19_R2 implements Toaster {
      * Constantes statiques nécessaires à la création de la notification
      */
 
-    private static final MinecraftKey key = new MinecraftKey("foxelia", "toast");
+    private static final ResourceLocation key = new ResourceLocation("foxelia", "toast");
     private static final AdvancementRewards advancementRewards =
-            new AdvancementRewards(0, new MinecraftKey[0], new MinecraftKey[0], null);
+            new AdvancementRewards(0, new ResourceLocation[0], new ResourceLocation[0], null);
     private static final String[][] requirements = new String[][] {{"0"}};
 
     private static final HashMap<String, Criterion> criteria = new HashMap<>();
     private static final AdvancementProgress toastProgress = new AdvancementProgress();
 
     static {
-        criteria.put("0", new Criterion(new CriterionInstance() {
+        criteria.put("0", new Criterion(new CriterionTriggerInstance() {
             @Override
-            public MinecraftKey a() {
-                return new MinecraftKey("", "");
+            public ResourceLocation getCriterion() {
+                return new ResourceLocation("", "");
             }
 
             @Override
-            public JsonObject a(LootSerializationContext lootSerializationContext) {
+            public JsonObject serializeToJson(SerializationContext lootSerializationContext) {
                 return null;
             }
         }));
-        toastProgress.a(criteria, requirements);
-        toastProgress.c("0").b();
+        toastProgress.update(criteria, requirements);
+        toastProgress.getCriterion("0").grant();
     }
 
     /*
@@ -79,11 +79,11 @@ public class Toaster_v1_19_R2 implements Toaster {
      * Obtenteurs
      */
 
-    private AdvancementFrameType getFrame() {
+    private FrameType getFrame() {
         return switch (type) {
-            case CHALLENGE -> AdvancementFrameType.b;
-            case GOAL -> AdvancementFrameType.c;
-            default -> AdvancementFrameType.a;
+            case CHALLENGE -> FrameType.CHALLENGE;
+            case GOAL -> FrameType.GOAL;
+            default -> FrameType.TASK;
         };
     }
 
@@ -102,13 +102,13 @@ public class Toaster_v1_19_R2 implements Toaster {
      * @param add Whether to add or remove the Advancement
      *            <br>True to add the Advancement
      *            <br>False to remove the Advancement
-     * @return {@link PacketPlayOutAdvancements} A AdvancementPacket to be sent to the Player
+     * @return {@link ClientboundUpdateAdvancementsPacket} A AdvancementPacket to be sent to the Player
      */
-    public PacketPlayOutAdvancements constructPacket(boolean add) {
+    public ClientboundUpdateAdvancementsPacket constructPacket(boolean add) {
         // Create Lists
         List<Advancement> addedAdvancements = new ArrayList<>();
-        Set<MinecraftKey> removedAdvancements = new HashSet<>();
-        Map<MinecraftKey, AdvancementProgress> progress = new HashMap<>();
+        Set<ResourceLocation> removedAdvancements = new HashSet<>();
+        Map<ResourceLocation, AdvancementProgress> progress = new HashMap<>();
 
         if (add) {
             addedAdvancements.add(generateAdvancement());
@@ -118,13 +118,13 @@ public class Toaster_v1_19_R2 implements Toaster {
         }
 
         // Create Packet
-        return new PacketPlayOutAdvancements(false, addedAdvancements, removedAdvancements, progress);
+        return new ClientboundUpdateAdvancementsPacket(false, addedAdvancements, removedAdvancements, progress);
     }
 
     @Override
     public void sendPacket(Player player, boolean add) {
-        PacketPlayOutAdvancements packet = constructPacket(add);
-        ((CraftPlayer) player).getHandle().b.a(packet);
+        ClientboundUpdateAdvancementsPacket packet = constructPacket(add);
+        ((CraftPlayer) player).getHandle().connection.send(packet);
     }
 
     /**
@@ -132,18 +132,18 @@ public class Toaster_v1_19_R2 implements Toaster {
      * @return {@link Advancement} The Advancement needed to create the Packet
      */
     private Advancement generateAdvancement() {
-        AdvancementDisplay advDisplay = new AdvancementDisplay(
+        DisplayInfo advDisplay = new DisplayInfo(
                 icon, toChatBaseComponent(text), toChatBaseComponent(""), null, getFrame(), true, false, true);
 
         return new Advancement(key, null, advDisplay, advancementRewards, criteria, requirements);
     }
 
     /**
-     * Converts a String to a IChatBaseComponent
+     * Converts a String to a Component
      * @param text The String to convert
-     * @return {@link IChatBaseComponent} The converted String
+     * @return {@link Component} The converted String
      */
-    private IChatBaseComponent toChatBaseComponent(String text) {
-        return IChatBaseComponent.ChatSerializer.a(ComponentSerializer.toString(text));
+    private Component toChatBaseComponent(String text) {
+        return Component.Serializer.fromJson(ComponentSerializer.toString(text));
     }
 }
