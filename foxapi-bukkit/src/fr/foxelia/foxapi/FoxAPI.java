@@ -4,9 +4,12 @@ import fr.foxelia.foxapi.gui.GUIListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
 import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;
+import fr.foxelia.tools.minecraft.bukkit.datas.player.PlayerFiles;
+import fr.foxelia.tools.minecraft.bukkit.datas.uuid.UUIDFetcher;
 import fr.foxelia.tools.minecraft.bukkit.ui.console.color.ColoredConsole;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -26,12 +29,13 @@ public class FoxAPI extends JavaPlugin {
         getLogger().log(Level.INFO, ColoredConsole.YELLOW + "By " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_GREEN + "======");
 
+        new UUIDFetcher(new File(PlayerFiles.getPublicFolder(FoxAPI.getInstance()), "uuidfetcher.yml"));
+
         getServer().getPluginManager().registerEvents(new GUIListener(), this);
     }
 
     @Override
     public void onDisable() {
-
         getLogger().log(Level.INFO, ColoredConsole.DARK_RED + "======" + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_RED + getDescription().getName() + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_RED + "Disabling..." + ColoredConsole.RESET);
@@ -42,6 +46,7 @@ public class FoxAPI extends JavaPlugin {
         getLogger().log(Level.INFO, ColoredConsole.YELLOW + "By " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_RED + "======" + ColoredConsole.RESET);
 
+        UUIDFetcher.getInstance().saveConfig();
     }
 
     public static FoxAPI getInstance() {
