@@ -1,4 +1,4 @@
-package fr.foxelia.tools.minecraft.nms.toast;
+package fr.foxelia.tools.minecraft.nms.toast.versions;
 
 
 import com.google.gson.JsonObject;
