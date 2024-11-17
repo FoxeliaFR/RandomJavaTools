@@ -32,6 +32,9 @@ This package contains tools to help you develop your Minecraft plugins, mods, or
     * 📂 [UI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui) → You can find here some tools to help you develop your Minecraft plugins UI.
         * 📂 [Console](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/console) → Tools related to the console UI.
             * 🍵 [ColoredConsole](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/console/color) → A tool to bring back colors to your console logs messages inspired by the Bukkit API.
+        * 📂 [GUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui) → Collection of classes to create inventory based GUI
+          * 🍵 [GUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui/GUI.java) → Create a GUI with basic features.
+          * 🍵 [NavigableGUI](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/ui/gui/NavigableGUI.java) → Create a navigable GUI with pages.
     * 🍵 [Cooldown](foxapi-bukkit/src/fr/foxelia/tools/minecraft/bukkit/cooldown) → Check if a player is has does a specific action in a specific time.
 
 ## [Discord](foxapi-core/src/fr/foxelia/tools/discord)

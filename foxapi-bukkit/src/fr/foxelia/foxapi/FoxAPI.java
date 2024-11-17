@@ -1,6 +1,6 @@
 package fr.foxelia.foxapi;
 
-import fr.foxelia.foxapi.GUI.GUIListener;
+import fr.foxelia.foxapi.gui.GUIListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
 import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;

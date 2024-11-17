@@ -1,4 +1,4 @@
-package fr.foxelia.foxapi.GUI;
+package fr.foxelia.tools.minecraft.bukkit.ui.gui;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;

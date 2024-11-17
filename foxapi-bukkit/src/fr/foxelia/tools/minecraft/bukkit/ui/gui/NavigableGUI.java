@@ -1,4 +1,4 @@
-package fr.foxelia.foxapi.GUI;
+package fr.foxelia.tools.minecraft.bukkit.ui.gui;
 
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.Inventory;
