@@ -27,6 +27,11 @@
             <artifactId>foxapi-standalone</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
+            <version>3.17.30</version>
+        </dependency>
     </dependencies>
 
     <build>

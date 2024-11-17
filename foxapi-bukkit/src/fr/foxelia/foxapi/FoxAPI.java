@@ -1,5 +1,6 @@
 package fr.foxelia.foxapi;
 
+import fr.foxelia.foxapi.GUI.GUIListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
 import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;
@@ -24,6 +25,8 @@ public class FoxAPI extends JavaPlugin {
         getLogger().log(Level.INFO, "");
         getLogger().log(Level.INFO, ColoredConsole.YELLOW + "By " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_GREEN + "======");
+
+        getServer().getPluginManager().registerEvents(new GUIListener(), this);
     }
 
     @Override
