@@ -24,7 +24,32 @@
         </dependency>
         <dependency>
             <groupId>fr.foxelia.foxapi</groupId>
+            <artifactId>foxapi-nms-1_19_R1</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.foxelia.foxapi</groupId>
             <artifactId>foxapi-nms-1_19_R2</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.foxelia.foxapi</groupId>
+            <artifactId>foxapi-nms-1_19_R3</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.foxelia.foxapi</groupId>
+            <artifactId>foxapi-nms-1_20_R1</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.foxelia.foxapi</groupId>
+            <artifactId>foxapi-nms-1_20_R2</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.foxelia.foxapi</groupId>
+            <artifactId>foxapi-nms-1_20_R3</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
