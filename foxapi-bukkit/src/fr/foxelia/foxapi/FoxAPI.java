@@ -4,6 +4,7 @@ import fr.foxelia.foxapi.gui.GUIListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
 import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;
+import fr.foxelia.tools.minecraft.bukkit.datas.database.DatabaseManager;
 import fr.foxelia.tools.minecraft.bukkit.datas.player.PlayerFiles;
 import fr.foxelia.tools.minecraft.bukkit.datas.uuid.UUIDFetcher;
 import fr.foxelia.tools.minecraft.bukkit.ui.console.color.ColoredConsole;
@@ -15,6 +16,7 @@ import java.util.logging.Level;
 
 public class FoxAPI extends JavaPlugin {
     private static FoxAPI instance;
+    private static DatabaseManager databaseManager;
 
     @Override
     public void onEnable() {
@@ -29,7 +31,17 @@ public class FoxAPI extends JavaPlugin {
         getLogger().log(Level.INFO, ColoredConsole.YELLOW + "By " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + ColoredConsole.RESET);
         getLogger().log(Level.INFO, ColoredConsole.DARK_GREEN + "======");
 
-        new UUIDFetcher(new File(PlayerFiles.getPublicFolder(FoxAPI.getInstance()), "uuidfetcher.yml"));
+        databaseManager = new DatabaseManager();
+        databaseManager.connect(
+                getConfig().getString("database.type"),
+                getConfig().getString("database.host"),
+                getConfig().getInt("database.port"),
+                getConfig().getString("database.name"),
+                getConfig().getString("database.user"),
+                getConfig().getString("database.password")
+        );
+
+        //new UUIDFetcher(new File(PlayerFiles.getPublicFolder(FoxAPI.getInstance()), "uuidfetcher.yml"));
 
         getServer().getPluginManager().registerEvents(new GUIListener(), this);
     }
