@@ -3,20 +3,25 @@ package fr.foxelia.foxapi;
 import fr.foxelia.foxapi.gui.GUIListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownMoveListener;
 import fr.foxelia.foxapi.listeners.cooldown.CooldownTakeDamageListener;
+import fr.foxelia.foxapi.test.TestListener;
+import fr.foxelia.foxapi.test.TestUser;
 import fr.foxelia.tools.minecraft.bukkit.cooldown.CooldownType;
 import fr.foxelia.tools.minecraft.bukkit.datas.database.DatabaseManager;
+import fr.foxelia.tools.minecraft.bukkit.datas.database.EntityManager;
 import fr.foxelia.tools.minecraft.bukkit.datas.player.PlayerFiles;
 import fr.foxelia.tools.minecraft.bukkit.datas.uuid.UUIDFetcher;
 import fr.foxelia.tools.minecraft.bukkit.ui.console.color.ColoredConsole;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
 
 public class FoxAPI extends JavaPlugin {
     private static FoxAPI instance;
     private static DatabaseManager databaseManager;
+    public static EntityManager<TestUser> testUserManager;
 
     @Override
     public void onEnable() {
@@ -37,9 +42,27 @@ public class FoxAPI extends JavaPlugin {
                 getConfig().getString("database.host"),
                 getConfig().getInt("database.port"),
                 getConfig().getString("database.name"),
-                getConfig().getString("database.user"),
+                getConfig().getString("database.username"),
                 getConfig().getString("database.password")
         );
+
+        testUserManager = new EntityManager<>(databaseManager.getConnection(), false);
+        try {
+            testUserManager.createTable(TestUser.class);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            testUserManager.loadAll(TestUser.class);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException(e);
+        }
+
+        testUserManager.startSyncTask(this, TestUser.class, 20);
+
+        getServer().getPluginManager().registerEvents(new TestListener(), this);
 
         //new UUIDFetcher(new File(PlayerFiles.getPublicFolder(FoxAPI.getInstance()), "uuidfetcher.yml"));
 

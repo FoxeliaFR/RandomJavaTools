@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
-    private Connection connection;
+    private Connection connection = null;
 
     public void connect(String dbType, String host, Integer port, String dbName, String user, String pass) {
         connect(
