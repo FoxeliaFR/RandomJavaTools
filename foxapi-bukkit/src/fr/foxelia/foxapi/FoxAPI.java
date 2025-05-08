@@ -67,6 +67,7 @@ public class FoxAPI extends JavaPlugin {
         //new UUIDFetcher(new File(PlayerFiles.getPublicFolder(FoxAPI.getInstance()), "uuidfetcher.yml"));
 
         getServer().getPluginManager().registerEvents(new GUIListener(), this);
+        saveDefaultConfig();
     }
 
     @Override
