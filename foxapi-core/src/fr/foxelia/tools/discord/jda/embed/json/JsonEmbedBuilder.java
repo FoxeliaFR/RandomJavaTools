@@ -90,8 +90,9 @@ public class JsonEmbedBuilder {
         // Set the footer
         if(jsonEmbed.has("footer")) {
             JsonObject footer = jsonEmbed.get("footer").getAsJsonObject();
-            embedBuilder.setFooter(editString(footer.get("text").getAsString()),
-                    editURL(footer.get("icon_url").getAsString()));
+            String text = (footer.has("text") && !footer.get("text").isJsonNull()) ? editString(footer.get("text").getAsString()) : null;
+            String icon = (footer.has("icon_url") && !footer.get("icon_url").isJsonNull()) ? editURL(footer.get("icon_url").getAsString()) : null;
+            embedBuilder.setFooter(text, icon);
         }
 
         // Set the timestamp
